@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/projek.css">
+    <link rel="stylesheet" href="../static/bootstrap-4/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/datatables.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../static/bootstrap-4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../static/bootstrap-4/js/jquery.js"></script>
+    <script type="text/javascript" src="../static/script.js"></script>
+    <script type="text/javascript" src="../static/jquery-3.6.2.min.js "></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.8/js/jquery.dataTables.min.js" "></script>
+    <script type="text/javascript" src="../static/datatables.min.js"></script>
+    <title>Projek</title>
+</head>
+<body>
+    <div class="1">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+            <!-- Links -->
+            <ul class="navbar-nav">
+      <li class="nav-item">
+        <A class="nav-link" href="#">Tugas Praktikum Pembelajaran Mesin</a>
+      </li>
+    </ul>
+  </nav>
+        </div>
+    </div>
+   
+    <div class="konten">
+        <div class="training jumbotron border_bayang">
+            <h2>Training</h2>
+            <p>Upload data training berformat CSV</p>
+            <div class="form-group">
+            <form action="/training" method="post" enctype="multipart/form-data" id="train-form">
+                <label for="trainingF">Select a file:</label>
+                <input required="required" class="form-control" type="file" id="file_train" name="file_train" accept=".csv"><br><br>
+            </div>
+                <button type="submit" value="submit" class="btn btn-primary" name="submit" id="submit">
+                    Submit
+                </button>
+            </form>
+	        </div>
+
+            <div class="testing jumbotron border_bayang">
+                <!-- Testing  -->
+                <h2>Testing</h2>
+                <p>Upload data testing berformat CSV</p>
+            <div class="form-group">
+                <form action="/testing" method="post" enctype="multipart/form-data" id="test-form">
+                <label for="testingF">Select a file:</label>
+                <input required="required" class="form-control" type="file" id="file_test" name="file_test" accept=".csv"><br><br>
+            </div>
+                <button type="submit" value="submit" class="btn btn-primary" name="submit" id="submit">
+                    Submit
+                </button>
+            </form>
+            </div>
+
+
+        <div class="preprocessing" id="preprocessing" style="display: none;">
+            <table class="table">
+                <tr>
+                    <th colspan="2">Ulasan Produk</th>
+                    <td id="cth"></td>
+                </tr>
+                <tr>
+                    <th>01</th>
+                    <th>Case Folding</th> 
+                    <td id="cth_lower"></td>
+                </tr>
+                <tr>
+                    <th>02</th>
+                    <th>Punctual Removal</th> 
+                    <td id="cth_punctual"></td>
+                 </tr>
+                 <tr>
+                    <th>03</th>
+                    <th>Normalisasi Data</th> 
+                    <td id="cth_normalize"></td>
+                 </tr>
+                 <tr>
+                    <th>04</th>
+                    <th>Stemming Data</th> 
+                    <td id="cth_stemmed"></td>
+                 </tr>
+                 <tr>
+                    <th>05</th>
+                    <th>Tokenized Data</th> 
+                    <td id="cth_tokenized"></td>
+                </tr>
+            </table>
+        </div>            
+            <div class="row grafik" id="grafik" style="display: none;">
+                <div>
+                    <div>
+                        <h2>Accuracy</h2>
+                        <img src="" alt="Akurasi" id="img_accuracy" width="100%"><br>
+                        Train Accuracy = <span id="accuracy_train"></span>% <br>
+                        Train Validation = <span id="accuracy_val"></span>% <br>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <h2>Loss</h2>
+                        <img src="" alt="Loss" id="img_loss" width="100%"><br>
+                        Loss Accuracy = <span id="loss_train"></span>% <br>
+                        Loss Validation = <span id="loss_val"></span>% <br>
+                    </div>
+                </div>
+            </div>
+
+            <!-- testing  -->
+            <div class="hasil_testing" id="hasil_testing" style="display: none;"> 
+                <div class="acc" id="acc">
+                    <div class="satu akurasi" style="vertical-align: top;">
+                    <h2>Accuracy <br> <span id="accuracy">%</span></h2><br>
+                    </div>
+                    <div class="satu">
+                    <h2>Confusion Matrix </h2>
+                    <img src="" alt="Hasil" id="img_cm" width="400px">
+                    </div>
+                </div>
+                <div class="table">
+                    <table id="empTable" class="empTable">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Review</th>
+                                <th>Aspek Pengiriman</th>
+                                <th>Aspek Pengiriman (pred)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tr_pengiriman">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- loading session -->
+            <div class="load-icon-train" style="display: none;">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <img src="../static/load.gif" alt="Loading..." >
+                    </div>
+                </div>
+            </div>
+            <div class="load-icon-test" style="display: none;">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <img src="../static/load.gif" alt="Loading..." >
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="footer"></div>
+    
+
+</body>
+</html>

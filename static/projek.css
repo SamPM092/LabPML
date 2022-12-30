@@ -1,0 +1,130 @@
+html{
+    scroll-behavior: smooth;
+}
+.center {
+    text-align: center;
+}
+
+.border_bayang {
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px #888888;
+    background-color: white;
+  }
+
+.wrapper {
+    width: 100%;
+    margin: 0px 0px;
+    background-image: url(bg2.jpg);
+    background-position: top center;
+    /* background-repeat: no-repeat; */
+    float: left;
+}
+
+.konten{
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 50px;
+}
+
+.header {
+    background-color: #18b949;
+    padding: 8rem 1rem;
+    margin-bottom: 2rem;
+    padding-left: 100px;
+    border-bottom: 1px solid black;
+}
+
+.judul {
+    position: inherit;
+    
+}
+
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    height: 40px;
+    margin-top: 50px;
+    border-top: solid 1px #0069d9;
+  }
+
+p {
+    font: 15px Arial, sans-serif;
+  }
+
+.satu{
+    display: inline-block;
+    padding: 1rem 1rem;
+    vertical-align: left;
+}
+
+.akurasi{
+    font-size: 40px;
+    font-style: bold;
+    padding: 1rem 15rem 1rem 1rem;
+}
+
+.navunit-style{
+    font-size: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+/* Absolute Center Spinner */
+.loading {
+    position: fixed;
+    overflow: show;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  
+  /* Transparent Overlay */
+  .loading:before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+      background: radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0, .8));
+  
+    background: -webkit-radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0,.8));
+  }
+  
+  /* :not(:required) hides these rules from IE9 and below */
+  .loading:not(:required) {
+    /* hide "loading..." text */
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+  }
+  
+  .loading:not(:required):after {
+    content: '';
+    display: block;
+    font-size: 10px;
+    width: 1em;
+    height: 1em;
+    margin-top: -0.5em;
+    -webkit-animation: spinner 150ms infinite linear;
+    -moz-animation: spinner 150ms infinite linear;
+    -ms-animation: spinner 150ms infinite linear;
+    -o-animation: spinner 150ms infinite linear;
+    animation: spinner 150ms infinite linear;
+    border-radius: 0.5em;
+    -webkit-box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1.1em 0 0, rgba(255,255,255, 0.75) 0 1.5em 0 0, rgba(255,255,255, 0.75) -1.1em 1.1em 0 0, rgba(255,255,255, 0.75) -1.5em 0 0 0, rgba(255,255,255, 0.75) -1.1em -1.1em 0 0, rgba(255,255,255, 0.75) 0 -1.5em 0 0, rgba(255,255,255, 0.75) 1.1em -1.1em 0 0;
+  box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1.1em 0 0, rgba(255,255,255, 0.75) 0 1.5em 0 0, rgba(255,255,255, 0.75) -1.1em 1.1em 0 0, rgba(255,255,255, 0.75) -1.5em 0 0 0, rgba(255,255,255, 0.75) -1.1em -1.1em 0 0, rgba(255,255,255, 0.75) 0 -1.5em 0 0, rgba(255,255,255, 0.75) 1.1em -1.1em 0 0;
+  }
+  
+  /* Animation */
+  
